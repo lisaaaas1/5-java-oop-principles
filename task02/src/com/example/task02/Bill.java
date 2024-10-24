@@ -18,12 +18,14 @@ public class Bill {
     public void add(Item item, int amount) {
         boolean found = false;
         for (BillItem billItem: items) {
+            // если товар есть в списке
             if (billItem.item.equals(item)) {
                 found = true;
                 billItem.amount += amount;
                 break;
             }
         }
+        // если товара еще не было в списке
         if (!found) {
             items.add(new BillItem(item, amount));
         }

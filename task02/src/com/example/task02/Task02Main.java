@@ -11,11 +11,16 @@ public class Task02Main {
 
     public static void main(String[] args) {
         Bill bill = new Bill();
-        bill.add(ITEM1, 10);
-        bill.add(ITEM3, 3);
-        bill.add(ITEM6, 1);
+        bill.add(ITEM1, 7);
         System.out.println(bill);
-        bill.add(ITEM3, 3);
-        System.out.println(bill);
+
+        DiscountBill discountBill = new DiscountBill(80);
+        discountBill.add(ITEM1, 10);
+        // Выводим информацию о счете со скидкой
+        System.out.println("\nСчет со скидкой 10%:");
+        System.out.println(discountBill);
+        System.out.println("Итоговая цена со скидкой: " + discountBill.getPrice());
+        System.out.println("Размер скидки: " + discountBill.getAbsoluteDiscount());
+
     }
 }
